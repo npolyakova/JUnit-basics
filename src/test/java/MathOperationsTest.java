@@ -1,5 +1,4 @@
 import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Random;
@@ -8,10 +7,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 public class MathOperationsTest {
     static MathOperations mathOperations;
+    static Random r;
 
     @BeforeAll
     static void setup() {
-         mathOperations = new MathOperations();
+        mathOperations = new MathOperations();
+        r = new Random();
     }
 
     @Test
@@ -23,8 +24,7 @@ public class MathOperationsTest {
     }
 
     @Test
-    void shouldMultiply10 () {
-        Random r = new Random();
+    void shouldMultiply10() {
         int randomNumber = r.nextInt();
         int res = mathOperations.multiply10(randomNumber);
 
@@ -33,17 +33,13 @@ public class MathOperationsTest {
     }
 
     @Test
-    void shouldDivide100 () {
-        MathOperations mathOperations = new MathOperations();
-
+    void shouldDivide100() {
         assertThat(mathOperations.divide100(3))
                 .isEqualTo(33);
     }
 
     @Test
     void shouldSumString() {
-        MathOperations mathOperations = new MathOperations();
-        Random r = new Random();
         int res = r.nextInt();
         String str = mathOperations.sumStrings(res);
 
