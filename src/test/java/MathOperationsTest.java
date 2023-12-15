@@ -39,4 +39,14 @@ public class MathOperationsTest {
         assertThat(mathOperations.divide100(3))
                 .isEqualTo(33);
     }
+
+    @Test
+    void shouldSumString() {
+        MathOperations mathOperations = new MathOperations();
+        Random r = new Random();
+        int res = r.nextInt();
+        String str = mathOperations.sumStrings(res);
+
+        assertThat(str).isEqualTo("Результат вычисления = " + res);
+    }
 }
