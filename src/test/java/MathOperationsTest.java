@@ -31,4 +31,12 @@ public class MathOperationsTest {
         assertThat(res)
                 .isEqualTo(randomNumber * 10);
     }
+
+    @Test
+    void shouldDivide100 () {
+        MathOperations mathOperations = new MathOperations();
+
+        assertThat(mathOperations.divide100(3))
+                .isEqualTo(33);
+    }
 }
