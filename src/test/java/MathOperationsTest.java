@@ -1,4 +1,5 @@
-import org.junit.jupiter.api.RepeatedTest;
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.Random;
@@ -6,10 +7,15 @@ import java.util.Random;
 import static org.assertj.core.api.Assertions.assertThat;
 
 public class MathOperationsTest {
+    static MathOperations mathOperations;
+
+    @BeforeAll
+    static void setup() {
+         mathOperations = new MathOperations();
+    }
 
     @Test
     void shouldSum() {
-        MathOperations mathOperations = new MathOperations();
         int res = mathOperations.sum();
 
         assertThat(res)
@@ -18,7 +24,6 @@ public class MathOperationsTest {
 
     @Test
     void shouldMultiply10 () {
-        MathOperations mathOperations = new MathOperations();
         Random r = new Random();
         int randomNumber = r.nextInt();
         int res = mathOperations.multiply10(randomNumber);

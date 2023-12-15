@@ -1,5 +1,4 @@
 public class MathOperations {
-
     public int sum(){
         int a = 2;
         int b = 3;
